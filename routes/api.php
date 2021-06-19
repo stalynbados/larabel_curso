@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\API\RegisterController;
 use App\Http\Controllers\API\ProductController;
+use App\Http\Controllers\CursoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +18,12 @@ use App\Http\Controllers\API\ProductController;
 |
 */
 
-Route::post('register', [RegisterController::class, 'register']);
-Route::post('login', [RegisterController::class, 'login']);
+Route::post('register', [RegisterController::class, 'register']); // registrace 
+Route::post('login', [RegisterController::class, 'login']);//logearce
 
-Route::middleware('auth:api')->group( function () {
+Route::middleware('auth:api')->group( function () {// es un intermediario que comprueba una autorisacion(auth:api)
+   
     Route::resource('products', ProductController::class);
+    Route::resource('cursos', CursoController::class);
 
 });
