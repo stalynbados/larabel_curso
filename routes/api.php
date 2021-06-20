@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\RegisterController;
 use App\Http\Controllers\API\ProductController;
 use App\Http\Controllers\CursoController;
-
+use App\Http\Controllers\RolController;
+use App\Http\Controllers\AnioLectivoController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -25,5 +26,7 @@ Route::middleware('auth:api')->group( function () {// es un intermediario que co
    
     Route::resource('products', ProductController::class);
     Route::resource('cursos', CursoController::class);
+    Route::resource('rols', RolController::class);
+    Route::resource('anio_lectivo', AnioLectivoController::class);
 
 });

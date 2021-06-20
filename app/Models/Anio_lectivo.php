@@ -5,15 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Rol extends Model
+class Anio_lectivo extends Model
 {
     use HasFactory;
+    use HasFactory;
     protected $fillable=[
-        'rol_descripcion',
-        'rol_estado'
-        
+        'anio_lectivo_inicio',
+        'anio_lectivo_fin',
+        'anio_lectivo_estado'
     
     ];
-    protected $table='rol';
+    protected $table='anio_lectivo';
     public $timestamps = false;
 }
